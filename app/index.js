@@ -1,20 +1,24 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { StyleSheet } from 'react-native';
 
-import AccountScreen from './screens/AccountScreen';
 import colors from './config/colors';
+import ListingsScreen from './screens/ListingsScreen';
 
 export default function App() {
   return (
-    <SafeAreaView
-      edges={['bottom', 'left', 'right']}
-      style={{ flex: 1, backgroundColor: colors.light }}
-    >
-      <GestureHandlerRootView>
-        <AccountScreen />
-      </GestureHandlerRootView>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={styles.container}>
+      <ListingsScreen />
       <StatusBar style="dark" />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.light,
+    paddingLeft: 10,
+    paddingRight: 10
+  }
+});
