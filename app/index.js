@@ -4,33 +4,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput } from 'react-native';
 
 import Screen from './components/Screen';
+import AppTextInput from './components/AppTextInput';
 
 export default function App() {
   const [firstName, setFirstName] = useState('');
 
   return (
-    <SafeAreaView edges={['bottom', 'left', 'right']} style={styles.container}>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={{
+        flex: 1
+      }}
+    >
       <Screen>
-        <Text>{firstName}</Text>
-        <TextInput
-          clearButtonMode="always"
-          secureTextEntry
-          onChangeText={(text) => setFirstName(text)}
-          placeholder="First Name"
-          placeholderTextColor="black"
-          style={{
-            borderBottomColor: '#ccc',
-            borderBottomWidth: 1
-          }}
-        />
+        <AppTextInput placeholder="Username" icon="email" />
       </Screen>
       <StatusBar style="dark" />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
