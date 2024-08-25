@@ -6,11 +6,14 @@ function WelcomeScreen(props) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require('../assets/background.jpg')}
+      source={require('../assets/images/background.jpg')}
       blurRadius={10}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require('../assets/logo-red.png')} />
+        <Image
+          style={styles.logo}
+          source={require('../assets/images/logo-red.png')}
+        />
         <Text style={styles.tagLine}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonContainer}>
