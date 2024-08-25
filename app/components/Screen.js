@@ -8,7 +8,11 @@ function Screen({ children }) {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.light
+    backgroundColor: colors.light,
+    flex: 1,
+    backgroundColor: colors.light,
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });
 

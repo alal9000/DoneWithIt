@@ -1,14 +1,29 @@
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, TextInput } from 'react-native';
 
-import colors from './config/colors';
-import ListingsScreen from './screens/ListingsScreen';
+import Screen from './components/Screen';
 
 export default function App() {
+  const [firstName, setFirstName] = useState('');
+
   return (
     <SafeAreaView edges={['bottom', 'left', 'right']} style={styles.container}>
-      <ListingsScreen />
+      <Screen>
+        <Text>{firstName}</Text>
+        <TextInput
+          clearButtonMode="always"
+          secureTextEntry
+          onChangeText={(text) => setFirstName(text)}
+          placeholder="First Name"
+          placeholderTextColor="black"
+          style={{
+            borderBottomColor: '#ccc',
+            borderBottomWidth: 1
+          }}
+        />
+      </Screen>
       <StatusBar style="dark" />
     </SafeAreaView>
   );
@@ -16,9 +31,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: colors.light,
-    paddingLeft: 10,
-    paddingRight: 10
+    flex: 1
   }
 });
