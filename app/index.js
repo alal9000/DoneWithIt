@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput } from 'react-native';
+import { Switch } from 'react-native';
 
 import Screen from './components/Screen';
-import AppTextInput from './components/AppTextInput';
 
 export default function App() {
-  const [firstName, setFirstName] = useState('');
+  const [isNew, setIsNew] = useState(false);
 
   return (
     <SafeAreaView
@@ -17,7 +16,10 @@ export default function App() {
       }}
     >
       <Screen>
-        <AppTextInput placeholder="Username" icon="email" />
+        <Switch
+          value={isNew}
+          onValueChange={(newValue) => setIsNew(newValue)}
+        />
       </Screen>
       <StatusBar style="dark" />
     </SafeAreaView>
