@@ -8,7 +8,6 @@ function Screen({ children }) {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.light,
     flex: 1,
     paddingLeft: 10,
     paddingRight: 10

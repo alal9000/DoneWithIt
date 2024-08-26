@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Switch } from 'react-native';
 
 import Screen from './components/Screen';
+import AppPicker from './components/AppPicker';
+import AppTextInput from './components/AppTextInput';
 
 export default function App() {
   const [isNew, setIsNew] = useState(false);
@@ -16,10 +18,10 @@ export default function App() {
       }}
     >
       <Screen>
-        <Switch
-          value={isNew}
-          onValueChange={(newValue) => setIsNew(newValue)}
-        />
+        {/* Write your implementation here */}
+
+        <AppPicker icon="apps" placeholder="Category" />
+        <AppTextInput icon="email" placeholder="Email" />
       </Screen>
       <StatusBar style="dark" />
     </SafeAreaView>
