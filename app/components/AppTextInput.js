@@ -18,7 +18,7 @@ function AppTextInput({ icon, ...otherProps }) {
       <TextInput
         style={defaultStyles.text}
         {...otherProps}
-        placeholderTextColor="grey"
+        placeholderTextColor={defaultStyles.colors.medium}
         cursorColor="black"
       />
     </View>
