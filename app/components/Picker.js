@@ -15,10 +15,10 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import defaultStyles from '../config/styles';
-import AppText from './AppText';
+import AppText from './Text';
 import PickerItem from './PickerItem';
 
-function AppPicker({
+function Picker({
   icon,
   items,
   numberOfColumns = 1,
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AppPicker;
+export default Picker;

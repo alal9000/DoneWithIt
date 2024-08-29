@@ -1,12 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
 
-import {
-  AppForm as Form,
-  AppFormField as FormField,
-  AppFormPicker as Picker,
-  SubmitButton
-} from '../components/forms';
+import { Form, FormField, FormPicker, SubmitButton } from '../components/forms';
 import Screen from '../components/Screen';
 import CategoryPickerItem from '../components/CategoryPickerItem';
 
@@ -95,11 +90,11 @@ function ListingEditScreen() {
           placeholder="Price"
           width={120}
         />
-        <Picker
+        <FormPicker
           items={categories}
           name="category"
-          // numberOfColumns={3}
-          // PickerItemComponent={CategoryPickerItem}
+          numberOfColumns={3}
+          PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width="50%"
         />
