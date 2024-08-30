@@ -6,6 +6,7 @@ import { Image } from 'react-native';
 
 import Screen from './components/Screen';
 import Button from './components/Button';
+import ImageInput from './components/ImageInput';
 
 export default function App() {
   const [imageUri, setImageUri] = useState();
@@ -37,6 +38,7 @@ export default function App() {
             source={{ uri: imageUri }}
             style={{ width: 200, height: 200 }}
           />
+          <ImageInput imageUri={imageUri} />
         </Screen>
         <StatusBar style="dark" />
       </SafeAreaView>
