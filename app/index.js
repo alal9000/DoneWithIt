@@ -33,12 +33,10 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <Screen>
-          <Button title="Select Image" onPress={selectImage} />
-          <Image
-            source={{ uri: imageUri }}
-            style={{ width: 200, height: 200 }}
+          <ImageInput
+            imageUri={imageUri}
+            onChangeImage={(uri) => setImageUri(uri)}
           />
-          <ImageInput imageUri={imageUri} />
         </Screen>
         <StatusBar style="dark" />
       </SafeAreaView>
