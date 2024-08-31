@@ -1,41 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import * as ImagePicker from 'expo-image-picker';
+import React, { useState } from 'react';
+
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { Image } from 'react-native';
 
 import Screen from './components/Screen';
-import Button from './components/Button';
-import ImageInput from './components/ImageInput';
+
+import ImageInputList from './components/ImageInputList';
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert('You need to enable permission to access the library');
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.canceled) setImageUri(result.assets[0].uri);
-    } catch (error) {
-      console.log('error reading an image', error);
-    }
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <Screen>
-          <ImageInput
-            imageUri={imageUri}
+          <ImageInputList
+            imageUris={imageUris}
             onChangeImage={(uri) => setImageUri(uri)}
+            onAddImage={handleAdd}
+            onRemoveImage={handleRemove}
           />
         </Screen>
         <StatusBar style="dark" />
