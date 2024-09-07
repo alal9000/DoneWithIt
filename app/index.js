@@ -24,7 +24,6 @@ export default function App() {
         <Screen>
           <ImageInputList
             imageUris={imageUris}
-            onChangeImage={(uri) => setImageUri(uri)}
             onAddImage={handleAdd}
             onRemoveImage={handleRemove}
           />
