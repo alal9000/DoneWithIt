@@ -6,28 +6,13 @@ import { StatusBar } from 'expo-status-bar';
 import Screen from './components/Screen';
 
 import ImageInputList from './components/ImageInputList';
+import ListingEditScreen from './screens/ListingEditScreen';
 
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
-  };
-
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        <Screen>
-          <ImageInputList
-            imageUris={imageUris}
-            onAddImage={handleAdd}
-            onRemoveImage={handleRemove}
-          />
-        </Screen>
+        <ListingEditScreen />
         <StatusBar style="dark" />
       </SafeAreaView>
     </SafeAreaProvider>
