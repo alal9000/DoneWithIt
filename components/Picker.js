@@ -14,7 +14,7 @@ import {
 } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import defaultStyles from '../config/styles';
+import defaultStyles from '../../config/styles';
 import AppText from './Text';
 import PickerItem from './PickerItem';
 

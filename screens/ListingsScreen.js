@@ -3,7 +3,7 @@ import React from 'react';
 import Screen from '../components/Screen';
 import { FlatList, StyleSheet } from 'react-native';
 import Card from '../components/Card';
-import colors from '../config/colors';
+import colors from '../../config/colors';
 
 const listings = [
   {

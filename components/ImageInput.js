@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-import colors from '../config/colors';
+import colors from '../../config/colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function ImageInput({ imageUri, onChangeImage }) {
