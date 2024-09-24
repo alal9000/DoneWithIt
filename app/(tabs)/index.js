@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
+import { Button, Pressable, Text, View } from 'react-native';
 
 import { Link, router } from 'expo-router';
 
@@ -17,6 +17,8 @@ export default function HomePage() {
       >
         <Text>Go to user 2</Text>
       </Pressable>
+      <Text>Tweets</Text>
+      <Button title="View Tweet" onPress={() => router.navigate('Tweet')} />
     </View>
   );
 }
